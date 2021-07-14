@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+mono main.app dat/input.dat
+

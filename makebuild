@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+echo "\n[Building project with mcs...]"
+
+mcs -out:main.app src/main.cs src/IFraction.cs src/DivisionByZero.cs src/Fraction.cs src/Fraction+IComparable.cs src/Fraction+IEquatable.cs src/Fraction+IFraction.cs src/Fraction+Operator.cs src/FractionPrivate.cs
+
+echo "[Building complete.]"
+
