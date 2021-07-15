@@ -12,8 +12,9 @@ namespace GA
     {
         public int Numerator { get; private set; }
         public int Denominator { get; private set; }
+        public decimal Decimal => new decimal(Numerator) / new decimal(Denominator);
 
-        public Fraction(int numerator, int denominator) : this()
+        public Fraction(int numerator = 0, int denominator = 1) : this()
         {
             Set(numerator, denominator);
         }
@@ -23,21 +24,11 @@ namespace GA
             Denominator = other.Denominator;
         }
 
-        public float AsFloat()
-        {
-            return Numerator / Denominator;
-        }
-
-        public double AsDouble()
-        {
-            return Numerator / Denominator;
-        }
-
         public override bool Equals(object obj)
         {
             if (obj is Fraction fraction)
             {
-                return CompareTo(fraction) == 0;
+                return Numerator == fraction.Numerator && Denominator == fraction.Denominator;
             }
 
             return false;
@@ -45,7 +36,7 @@ namespace GA
 
         public override string ToString()
         {
-            return string.Format("[{0} / {1}]: {2}", Numerator, Denominator, AsFloat());
+            return string.Format("[{0} / {1}]", Numerator, Denominator);
         }
 
         public override int GetHashCode()

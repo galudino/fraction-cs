@@ -12,7 +12,7 @@ namespace GA
     {
         public bool Equals(Fraction other)
         {
-            return CompareTo(other) == 0;
+            return Numerator == other.Numerator && Denominator == other.Denominator;
         }
     }
 }
